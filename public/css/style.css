@@ -1,0 +1,55 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+form {
+    margin-top: 15%;
+    margin-left: 35%;
+}
+
+.profile {
+    margin-top: 10%;
+    margin-left: 35%;
+}
+
+.formPost {
+    margin-top: 10%;
+    margin-left: 35%;
+}
+
+.inputLogin, .inputSignUp, .inputProfile {
+    height: 30px;
+    width: 350px;
+    border: none;
+    border-bottom: 1px solid rgb(136, 135, 135);
+    outline: none;
+}
+
+.buttonLogin, .buttonSignUp, .buttonProfile, .btnProfile, .btnAddPost {
+    height: 35px;
+    width: 100px;
+    border-radius: 5px;
+    border-width: thin;
+    border-style: solid;
+}
+
+.profileBody {
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+.buttonLogin:hover, .buttonSignUp:hover, .buttonProfile:hover, .btnProfile:hover, .btnAddPost:hover {
+    cursor: pointer;
+    background-color: rgb(82, 79, 79);
+    color: white;
+}
+
+.imgProfile {
+    width: 300px;
+    border-radius: 70px;
+}
+
+.login {
+    background: url(Pictagram.png);
+    background-repeat: no-repeat;
+}

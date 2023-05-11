@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pictagram</title>
+</head>
+<body>
+    <form action="/home/edit/<%= post.id %>" method="post">
+        <div>
+            <label for="caption">Caption</label><br>
+            <input type="text" name="caption" value="<%= post.caption %>">
+        </div><br>
+        <div>
+            <label for="imageUrl">Image Url</label><br>
+            <input type="text" name="imageUrl" value="<%= post.imageUrl %>">
+        </div><br>
+        <div>
+            <label for="TagId">Tag</label><br>
+            <% tags.forEach(el => { %>
+                <input type="radio" name="TagId" value="<%= el.id %>" <%= el.id == tag.TagId ? 'checked' : '' %> ><label for="TagId"><%= el.name %></label>
+            <% }) %>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

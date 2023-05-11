@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>Pictagram</title>
+</head>
+<body>
+    <% if (errors) { %>
+        <% errors.forEach(el => { %>
+            <p><%= el %></p>
+        <% }) %>
+    <% } %>
+    <form action="/signUp" method="post">
+        <div>
+            <label for="username">Username</label><br>
+            <input class="inputSignUp" type="text" name="username">
+        </div><br>
+        <div>
+            <label for="email">Email</label><br>
+            <input class="inputSignUp" type="email" name="email">
+        </div><br>
+        <div>
+            <label for="password">Password</label><br>
+            <input class="inputSignUp" type="password" name="password">
+        </div><br>
+        <input class="buttonSignUp" type="submit" value="Sign Up">
+    </form>
+</body>
+</html>

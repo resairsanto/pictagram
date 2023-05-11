@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>Pictagram</title>
+</head>
+<body>
+    <form class="formPost" action="/home/post" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="imageUrl">Image Url</label><br>
+            <!-- <input class="inputImg" type="file" name="imageUrl"> -->
+            <input class="inputImg" type="input" name="imageUrl">
+        </div><br>
+        <div>
+            <label for="caption">Caption</label><br>
+            <textarea name="caption" cols="30" rows="10"></textarea>
+        </div><br>
+        <div>
+            <label for="TagId">Tag</label><br>
+            <% tags.forEach(el => { %>
+                <input type="radio" name="TagId" value="<%= el.id %>"><label for="TagId"><%= el.name %></label>
+            <% }) %>
+        </div><br>
+        <input class="btnAddPost" type="submit" value="Posting">
+    </form>
+</body>
+</html>
