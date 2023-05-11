@@ -1,24 +1,4 @@
-class Controller {
-    static loginForm(req, res) {
-
-    }
-
-    static login(req, res) {
-        
-    }
-
-    static formSignUp(req, res) {
-        
-    }
-
-    static addUser(req, res) {
-        
-    }
-
-    static logout(req, res) {
-        
-    }
-
+class Pictagram {
     static home(req, res) {
         
     }
@@ -44,4 +24,4 @@ class Controller {
     }
 }
 
-module.exports = Controller
+module.exports = Pictagram
