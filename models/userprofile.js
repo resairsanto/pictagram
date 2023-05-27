@@ -13,6 +13,20 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       UserProfile.belongsTo(models.User)
     }
+
+    get greeting() {
+      const currentTime = new Date()
+      const currentHour = currentTime.getHours()
+
+      if (currentHour >= 0 && currentHour < 12) {
+        return "Good morning! " + this.fullName
+      } else if (currentHour >= 12 && currentHour < 18) {
+        return "Good afternoon! " + this.fullName
+      } else {
+        return "Good evening! " + this.fullName
+      }
+    }
+
   }
   UserProfile.init({
     fullName: DataTypes.STRING,
