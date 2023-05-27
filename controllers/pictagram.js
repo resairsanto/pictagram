@@ -1,9 +1,9 @@
 const { User, UserProfile, Post, PostTag, Tag } = require('../models')
 
 class Pictagram {
-    static home(req, res) {
-        res.send("hello world!")
-    }
+    // static home(req, res) {
+    //     res.send("hello world!")
+    // }
 
     static readProfile(req, res) {
         const { UserId } = req.session
@@ -104,7 +104,6 @@ class Pictagram {
         const { UserId } = req.session
         const { caption, imageUrl, TagId } = req.body
         const { PostId } = req.params
-        console.log(caption, imageUrl, UserId, TagId)
         Post.update({ caption, imageUrl, UserId }, { where: { id: PostId } })
             .then(() => {
                 return PostTag.update({ PostId, TagId }, { where: { PostId } })

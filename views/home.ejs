@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,24 +8,34 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Pictagram</title>
 </head>
+
 <body class="profileBody">
-    <h1>Welcome to Pictagram Home</h1><br>
+    <h1>Welcome to Pictagram</h1><br>
     <a href="/home/post"><button class="btnProfile">Add Post</button></a>
     <a href="/home/profile?explore=all"><button class="btnProfile">Explore</button></a>
     <a href="/home/profile?explore="><button class="btnProfile">My Post</button></a>
     <a href="/logout"><button class="btnProfile">Logout</button></a>
-    <h2><%= userProfile.greeting %></h2>
+    <h2>
+        <%= userProfile.greeting %>
+    </h2>
     <img class="imgProfile" src="<%= userProfile.profilePicture %>" alt="Profile Picture">
     <p>My Bio ...</p>
-    <p><%= userProfile.bio %></p>
+    <p>
+        <%= userProfile.bio %>
+    </p>
+    <hr>
     <% if (post) { %>
-        <% post.forEach(el => { %>
-            <img src='<%= el.imageUrl %>' alt="Posts" width="75px">
-            <a href="/home/edit/<%= el.id %>">Edit Post</a>
-            <a href="/home/delete/<%= el.id %>">Delete Post</a>
-        <% }) %>
-    <% } else { %>
-        <p>You don't have any post!</p>
-    <% } %>
+        <% post.forEach(el=> { %>
+            <img src='<%= el.imageUrl %>' alt="Posts" width="250px">
+            <p>Caption: <%= el.caption %>
+            </p>
+            <label for="">Actions: </label>
+            <a href="/home/edit/<%= el.id %>">Edit</a>
+            <a href="/home/delete/<%= el.id %>">Delete</a><br><br>
+            <% }) %>
+                <% } else { %>
+                    <p>You don't have any post!</p>
+                    <% } %>
 </body>
+
 </html>
