@@ -1,9 +1,6 @@
 const { User, UserProfile, Post, PostTag, Tag } = require('../models')
 
 class Pictagram {
-    // static home(req, res) {
-    //     res.send("hello world!")
-    // }
 
     static readProfile(req, res) {
         const { UserId } = req.session
@@ -44,10 +41,6 @@ class Pictagram {
             .catch((err) => {
                 res.send(send)
             })
-    }
-
-    static formAddProfile(req, res) {
-        res.render("addProfileForm")
     }
 
     static addProfile(req, res) {
